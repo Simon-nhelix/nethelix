@@ -52,3 +52,14 @@ support:
 - Build command: `hugo --gc --minify`
 - Output directory: `public`
 - 환경변수: `HUGO_VERSION=0.165.0`
+
+## 방명록 / 댓글 (Pages Functions + D1)
+
+- 저장: D1 `nethelix-comments` (스키마 `db/schema.sql`), Pages 바인딩 이름 `DB`
+- 공개 API `functions/api/comments.js`: GET `?page=` 승인된 글, POST 새 글(pending)
+- 관리 API `functions/api/admin/comments.js`: `Authorization: Bearer $ADMIN_TOKEN`
+- 관리 화면: https://nethelix.pages.dev/admin/ (토큰 입력 → 승인/거절/삭제)
+- 스팸: Turnstile(`TURNSTILE_SECRET` 환경변수 + `hugo.yaml` `params.turnstileSiteKey`) + IP당 10분 5개
+- Pages 환경변수: `ADMIN_TOKEN`(필수), `TURNSTILE_SECRET`(권장), `IP_SALT`(선택), `AUTO_APPROVE=1`(승인 없이 즉시 공개하고 싶을 때)
+- 글에서 댓글 끄기: front matter `comments: false`
+- 방명록 페이지: `/guestbook/` (`{{</* comments page="guestbook" */>}}`)

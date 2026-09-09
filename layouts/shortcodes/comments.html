@@ -1,0 +1,3 @@
+{{ $page := .Get "page" | default (strings.TrimSuffix "/" .Page.RelPermalink | default "home") }}
+<div class="comments-box" data-comments data-page="{{ strings.TrimPrefix "/" $page | default "home" }}" data-sitekey="{{ site.Params.turnstileSiteKey }}"></div>
+<script src="/js/comments.js" defer></script>

@@ -12,3 +12,5 @@ ShowReadingTime: false
 {{< support >}}
 
 > 후원 링크는 준비 중입니다.
+
+응원 한마디는 [방명록](/guestbook/)에 남겨주세요. 후원 여부와 상관없이 언제든 환영입니다.

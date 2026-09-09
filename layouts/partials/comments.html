@@ -1,2 +1,8 @@
-{{ if eq .Type "posts" }}{{ partial "support-box.html" . }}{{ end }}
-{{ if eq .Type "patches" }}{{ partial "support-box.html" . }}{{ end }}
+{{ if or (eq .Type "posts") (eq .Type "patches") }}
+{{ partial "support-box.html" . }}
+{{ if ne .Params.comments false }}
+<h3 class="comments-title">댓글</h3>
+<div class="comments-box" data-comments data-page="{{ strings.TrimSuffix "/" (strings.TrimPrefix "/" .RelPermalink) }}" data-sitekey="{{ site.Params.turnstileSiteKey }}"></div>
+<script src="/js/comments.js" defer></script>
+{{ end }}
+{{ end }}

@@ -14,3 +14,22 @@
   text-decoration: none; font-weight: 600;
 }
 .support-links a:hover, .patch-btn:hover { opacity: .85; }
+
+.comments-title { margin: 28px 0 8px; }
+.comments-box { margin: 12px 0 24px; }
+.cmt-form { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+.cmt-form input, .cmt-form textarea {
+  font: inherit; padding: 8px 10px; border: 1px solid var(--border); border-radius: 6px;
+  background: var(--entry); color: var(--content);
+}
+.cmt-actions { display: flex; align-items: center; gap: 12px; }
+.cmt-actions button {
+  padding: 8px 16px; border: 0; border-radius: 6px; background: var(--primary); color: var(--theme);
+  font-weight: 600; cursor: pointer;
+}
+.cmt-actions button:disabled { opacity: .6; cursor: default; }
+.cmt-msg, .cmt-muted { font-size: .9em; color: var(--secondary); }
+.cmt-item { border-top: 1px solid var(--border); padding: 10px 0; }
+.cmt-meta { font-size: .85em; color: var(--secondary); margin-bottom: 4px; }
+.cmt-meta b { color: var(--content); margin-right: 8px; }
+.cmt-body { white-space: pre-wrap; }
