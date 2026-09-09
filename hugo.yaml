@@ -1,0 +1,87 @@
+baseURL: "https://nethelix.pages.dev/"
+title: "nethelix"
+languageCode: "ko-kr"
+defaultContentLanguage: "ko"
+hasCJKLanguage: true
+theme: "PaperMod"
+timeZone: "Asia/Seoul"
+enableRobotsTXT: true
+enableEmoji: true
+
+pagination:
+  pagerSize: 10
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+# 후원 링크: 값을 채우면 사이드/푸터와 {{< support >}} 숏코드에 자동 표시됨. 비우면 숨김.
+params:
+  env: production
+  description: "고전 게임 한글 패치와 레트로 게이밍 기록"
+  author: "nethelix"
+  defaultTheme: auto
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  TocOpen: false
+  ShowWordCount: false
+  ShowRssButtonInSectionTermList: true
+  disableSpecial1stPost: true
+
+  support:
+    toss: ""        # 예: https://toss.me/아이디
+    kakaopay: ""    # 예: https://qr.kakaopay.com/xxxx
+    kofi: ""        # 예: https://ko-fi.com/아이디
+    github: "https://github.com/Simon-nhelix"
+
+  homeInfoParams:
+    Title: "nethelix"
+    Content: >
+      고전 게임 한글 패치와 레트로 게이밍 기록을 남기는 곳입니다.
+      패치는 원본 롬을 포함하지 않는 차분 파일(IPS/BPS/xdelta)만 배포합니다.
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/Simon-nhelix"
+    - name: rss
+      url: "index.xml"
+
+  assets:
+    disableHLJS: false
+
+menu:
+  main:
+    - identifier: posts
+      name: 글
+      url: /posts/
+      weight: 10
+    - identifier: patches
+      name: 패치
+      url: /patches/
+      weight: 20
+    - identifier: tags
+      name: 태그
+      url: /tags/
+      weight: 30
+    - identifier: support
+      name: 후원
+      url: /support/
+      weight: 40
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
+    style: monokai
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON

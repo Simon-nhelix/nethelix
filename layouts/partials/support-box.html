@@ -1,0 +1,12 @@
+{{ $s := site.Params.support }}
+{{ if or $s.toss $s.kakaopay $s.kofi }}
+<div class="support-box">
+  <p class="support-title">☕ 이 글이 도움이 됐다면 커피 한 잔 어떠세요?</p>
+  <p class="support-note">후원은 블로그 운영에 대한 응원이며, 패치의 대가가 아닙니다.</p>
+  <div class="support-links">
+    {{ with $s.toss }}<a href="{{ . }}" target="_blank" rel="noopener">토스로 후원</a>{{ end }}
+    {{ with $s.kakaopay }}<a href="{{ . }}" target="_blank" rel="noopener">카카오페이로 후원</a>{{ end }}
+    {{ with $s.kofi }}<a href="{{ . }}" target="_blank" rel="noopener">Ko-fi (해외)</a>{{ end }}
+  </div>
+</div>
+{{ end }}
