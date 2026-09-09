@@ -1,6 +1,6 @@
 ---
 title: "nethelix 시작"
-date: 2026-09-09T14:10:00+09:00
+date: 2026-09-09T13:30:00+09:00
 draft: false
 tags: ["공지"]
 ---
