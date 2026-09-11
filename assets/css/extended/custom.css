@@ -15,6 +15,11 @@
 }
 .support-links a:hover, .patch-btn:hover { opacity: .85; }
 
+/* Keep the native GBA screenshot sharp in the article and patch list. */
+.entry-cover img[src*="/images/patches/srta-rc1/"] {
+  image-rendering: pixelated;
+}
+
 .comments-title { margin: 28px 0 8px; }
 .comments-box { margin: 12px 0 24px; }
 .cmt-form { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }

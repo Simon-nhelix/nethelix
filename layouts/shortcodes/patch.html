@@ -1,10 +1,11 @@
 {{ $repo := .Get "repo" | default "Simon-nhelix/nethelix" }}
 {{ $tag := .Get "tag" }}
 {{ $file := .Get "file" }}
+{{ $label := .Get "label" | default $file }}
 {{ $url := printf "https://github.com/%s/releases/download/%s/%s" $repo $tag $file }}
 <div class="patch-box">
   <p class="patch-title">⬇️ 패치 다운로드</p>
-  <p><a class="patch-btn" href="{{ $url }}">{{ $file }}</a></p>
+  <p><a class="patch-btn" href="{{ $url }}">{{ $label }}</a></p>
   <p class="patch-note">
     버전: <code>{{ $tag }}</code> ·
     <a href="https://github.com/{{ $repo }}/releases/tag/{{ $tag }}" target="_blank" rel="noopener">릴리스 노트 / 이전 버전</a>
